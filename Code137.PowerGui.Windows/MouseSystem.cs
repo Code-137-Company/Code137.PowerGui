@@ -8,72 +8,50 @@ namespace Code137.PowerGui.Windows
 {
     public class MouseSystem
     {
-        public static void Click(MKeys key = MKeys.Left)
+        public static void Click(MKeys key)
         {
-            if (key == MKeys.Left)
-            {
-                Api.MouseEvet((int)EnumMouseKeys.LeftPress, 0, 0, 0, 0);
-                Api.MouseEvet((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
-            }
-            else if (key == MKeys.Right)
-            {
-                Api.MouseEvet((int)EnumMouseKeys.RightPress, 0, 0, 0, 0);
-                Api.MouseEvet((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
-            }
-            else if (key == MKeys.Middle)
-            {
-                Api.MouseEvet((int)EnumMouseKeys.MiddlePress, 0, 0, 0, 0);
-                Api.MouseEvet((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
-            }
+            Press(key);
+            Release(key);
+
+            //if (key == MKeys.Left)
+            //{
+            //    Api.MouseEvent((int)EnumMouseKeys.LeftPress, 0, 0, 0, 0);
+            //    Api.MouseEvent((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
+            //}
+            //else if (key == MKeys.Right)
+            //{
+            //    Api.MouseEvent((int)EnumMouseKeys.RightPress, 0, 0, 0, 0);
+            //    Api.MouseEvent((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
+            //}
+            //else if (key == MKeys.Middle)
+            //{
+            //    Api.MouseEvent((int)EnumMouseKeys.MiddlePress, 0, 0, 0, 0);
+            //    Api.MouseEvent((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
+            //}
         }
 
-        public static void Double(MKeys key = MKeys.Left)
+        public static void Double(MKeys key)
         {
-            if (key == MKeys.Left)
-            {
-                Api.MouseEvet((int)EnumMouseKeys.LeftPress, 0, 0, 0, 0);
-                Api.MouseEvet((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
+            Click(key);
 
-                Thread.Sleep(200);
+            Thread.Sleep(200);
 
-                Api.MouseEvet((int)EnumMouseKeys.LeftPress, 0, 0, 0, 0);
-                Api.MouseEvet((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
-            }
-            else if (key == MKeys.Right)
-            {
-                Api.MouseEvet((int)EnumMouseKeys.RightPress, 0, 0, 0, 0);
-                Api.MouseEvet((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
-
-                Thread.Sleep(200);
-
-                Api.MouseEvet((int)EnumMouseKeys.RightPress, 0, 0, 0, 0);
-                Api.MouseEvet((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
-            }
-            else if (key == MKeys.Middle)
-            {
-                Api.MouseEvet((int)EnumMouseKeys.MiddlePress, 0, 0, 0, 0);
-                Api.MouseEvet((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
-
-                Thread.Sleep(200);
-
-                Api.MouseEvet((int)EnumMouseKeys.MiddlePress, 0, 0, 0, 0);
-                Api.MouseEvet((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
-            }
+            Click(key);
         }
 
         public static void Press(MKeys key)
         {
             if (key == MKeys.Left)
             {
-                Api.MouseEvet((int)EnumMouseKeys.LeftPress, 0, 0, 0, 0);
+                Api.MouseEvent((int)EnumMouseKeys.LeftPress, 0, 0, 0, 0);
             }
             else if (key == MKeys.Right)
             {
-                Api.MouseEvet((int)EnumMouseKeys.RightPress, 0, 0, 0, 0);
+                Api.MouseEvent((int)EnumMouseKeys.RightPress, 0, 0, 0, 0);
             }
             else if (key == MKeys.Middle)
             {
-                Api.MouseEvet((int)EnumMouseKeys.MiddlePress, 0, 0, 0, 0);
+                Api.MouseEvent((int)EnumMouseKeys.MiddlePress, 0, 0, 0, 0);
             }
         }
 
@@ -83,30 +61,33 @@ namespace Code137.PowerGui.Windows
             {
                 if (Api.GetAsyncKeyState(1) == -32767)
                 {
-                    Api.MouseEvet((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
+                    Api.MouseEvent((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
                 }
             }
             else if (key == MKeys.Right)
             {
                 if (Api.GetAsyncKeyState(2) == -32767)
                 {
-                    Api.MouseEvet((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
+                    Api.MouseEvent((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
                 }
             }
             else if (key == MKeys.Middle)
             {
                 if (Api.GetAsyncKeyState(4) == -32767)
                 {
-                    Api.MouseEvet((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
+                    Api.MouseEvent((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
                 }
             }
         }
 
         public static void ReleaseAll()
         {
-            Api.MouseEvet((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
-            Api.MouseEvet((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
-            Api.MouseEvet((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
+            //Api.MouseEvet((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
+            //Api.MouseEvet((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
+            //Api.MouseEvet((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
+
+            foreach (var keys in Enum.GetNames(typeof(MKeys)))
+                Api.MouseEvent((int)Enum.Parse(typeof(MKeys), keys), 0, 0, 0, 0);
         }
 
         public static void SetPosition(int x, int y)

@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Code137.PowerGui.Windows\Code137.PowerGui.Windows.csproj" />
+  </ItemGroup>
+
 </Project>

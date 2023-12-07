@@ -64,11 +64,17 @@ namespace Code137.PowerGui.Windows
 
         public static void Click(KKeys key)
         {
-            Api.KeyboardEvent((byte)key, 0, 0, nuint.Zero);
+            Press(key);
 
             Thread.Sleep(150);
 
-            Api.KeyboardEvent((byte)key, 0, KEYEVENF_KEYUP, nuint.Zero);
+            Release(key);
+
+            //Api.KeyboardEvent((byte)key, 0, 0, nuint.Zero);
+
+            //Thread.Sleep(150);
+
+            //Api.KeyboardEvent((byte)key, 0, KEYEVENF_KEYUP, nuint.Zero);
         }
 
         public static void Press(KKeys key)

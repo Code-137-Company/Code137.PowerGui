@@ -5,7 +5,7 @@ namespace Code137.PowerGui.Windows.External
     internal class Api
     {
         [DllImport("user32.dll", EntryPoint = "mouse_event")]
-        public static extern void MouseEvet(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
+        public static extern void MouseEvent(int dwFlags, int dx, int dy, int dwData, int dwExtraInfo);
 
         [DllImport("user32.dll", EntryPoint = "keybd_event")]
         public static extern void KeyboardEvent(byte bVk, byte bScan, uint dwFlags, UIntPtr dwExtraInfo);
