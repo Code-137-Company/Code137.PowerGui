@@ -43,7 +43,7 @@ namespace Code137.PowerGui
             }
         }
 
-        public static void ReleaseMouse(MKeys key)
+        public static void MouseRelease(MKeys key)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Code137.PowerGui
             }
         }
 
-        public static void ReleaseMouseKeys()
+        public static void MouseReleaseKeys()
         {
             try
             {
@@ -129,7 +129,7 @@ namespace Code137.PowerGui
             }
         }
 
-        public static void ReleaseKeyboard(KKeys key)
+        public static void KeyboardRelease(KKeys key)
         {
             try
             {
@@ -141,7 +141,7 @@ namespace Code137.PowerGui
             }
         }
 
-        public static void ReleaseKeyboardKeys()
+        public static void KeyboardReleaseKeys()
         {
             try
             {
@@ -168,15 +168,8 @@ namespace Code137.PowerGui
 
         public static void ReleaseAllKeys()
         {
-            try
-            {
-                ReleaseMouseKeys();
-                ReleaseKeyboardKeys();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Error releasing all keys. Message: {ex.Message}");
-            }
+            MouseReleaseKeys();
+            KeyboardReleaseKeys();
         }
 
         public static void Sleep(double time)
@@ -207,11 +200,23 @@ namespace Code137.PowerGui
             }
         }
 
-        public static PixelColor GetPixelColor(int x, int y)
+        public static PixelColor GetMousePixelColor()
         {
             try
             {
-                return CommonSystem.GetPixelColor(x, y);
+                return CommonSystem.GetPixelColor(GetCursorPosition());
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error finding pixel color. Message: {ex.Message}");
+            }
+        }
+
+        public static PixelColor GetPixelColor(Position position)
+        {
+            try
+            {
+                return CommonSystem.GetPixelColor(position);
             }
             catch (Exception ex)
             {

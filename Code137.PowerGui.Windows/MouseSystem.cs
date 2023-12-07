@@ -82,12 +82,9 @@ namespace Code137.PowerGui.Windows
 
         public static void ReleaseAll()
         {
-            //Api.MouseEvet((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
-            //Api.MouseEvet((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
-            //Api.MouseEvet((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
-
-            foreach (var keys in Enum.GetNames(typeof(MKeys)))
-                Api.MouseEvent((int)Enum.Parse(typeof(MKeys), keys), 0, 0, 0, 0);
+            Api.MouseEvent((int)EnumMouseKeys.LeftDrop, 0, 0, 0, 0);
+            Api.MouseEvent((int)EnumMouseKeys.RightDrop, 0, 0, 0, 0);
+            Api.MouseEvent((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
         }
 
         public static void SetPosition(int x, int y)

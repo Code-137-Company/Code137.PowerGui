@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code137.PowerGui.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code137.PowerGui.Windows", "Code137.PowerGui.Windows\Code137.PowerGui.Windows.csproj", "{B1373F3F-7E9F-4C11-96B1-A69A25931DEF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code137.PowerGui.Samples", "Code137.PowerGui.Samples\Code137.PowerGui.Samples.csproj", "{3F344DBB-7DB7-48C7-9B50-3B507A619F86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B1373F3F-7E9F-4C11-96B1-A69A25931DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1373F3F-7E9F-4C11-96B1-A69A25931DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1373F3F-7E9F-4C11-96B1-A69A25931DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F344DBB-7DB7-48C7-9B50-3B507A619F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F344DBB-7DB7-48C7-9B50-3B507A619F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F344DBB-7DB7-48C7-9B50-3B507A619F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F344DBB-7DB7-48C7-9B50-3B507A619F86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

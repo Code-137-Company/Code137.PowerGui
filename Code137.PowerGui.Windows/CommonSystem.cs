@@ -11,9 +11,9 @@ namespace Code137.PowerGui.Windows
 
         public static void MessageBox(string title, string message) => Api.MessageBox(0, message, title, 0);
 
-        public static PixelColor GetPixelColor(int x, int y)
+        public static PixelColor GetPixelColor(Position position)
         {
-            Point point = new Point(x, y);
+            Point point = new Point(position.X, position.Y);
 
             using (Graphics gdest = Graphics.FromImage(bitmap))
             {
@@ -31,7 +31,7 @@ namespace Code137.PowerGui.Windows
 
             Color color = bitmap.GetPixel(0, 0);
 
-            PixelColor pColor = new PixelColor(x, y, color.R, color.G, color.B, color.A);
+            PixelColor pColor = new PixelColor(position.X, position.Y, color.R, color.G, color.B, color.A);
 
             return pColor;
         }

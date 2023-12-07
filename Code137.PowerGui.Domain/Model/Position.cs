@@ -10,5 +10,11 @@
             X = 0;
             Y = 0;
         }
+
+        public Position(int x, int y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 }

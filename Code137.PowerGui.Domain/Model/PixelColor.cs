@@ -19,11 +19,11 @@
 
         public PixelColor(int x, int y, byte r, byte g, byte b, byte a)
         {
-            Pos = new Position();
-            R = 0;
-            G = 0;
-            B = 0;
-            A = 0;
+            Pos = new Position(x, y);
+            R = r;
+            G = g;
+            B = b;
+            A = a;
         }
     }
 }
