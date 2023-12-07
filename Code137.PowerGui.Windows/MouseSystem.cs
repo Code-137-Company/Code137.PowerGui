@@ -87,9 +87,9 @@ namespace Code137.PowerGui.Windows
             Api.MouseEvent((int)EnumMouseKeys.MiddleDrop, 0, 0, 0, 0);
         }
 
-        public static void SetPosition(int x, int y)
+        public static void SetPosition(Position position)
         {
-            Api.SetCursorPos(x, y);
+            Api.SetCursorPos(position.X, position.Y);
         }
 
         public static Position GetPosition()

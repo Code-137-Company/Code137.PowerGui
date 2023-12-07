@@ -67,11 +67,11 @@ namespace Code137.PowerGui
             }
         }
 
-        public static void SetCursorPosition(int x, int y)
+        public static void SetCursorPosition(Position position)
         {
             try
             {
-                MouseSystem.SetPosition(x, y);
+                MouseSystem.SetPosition(position);
             }
             catch (Exception ex)
             {
