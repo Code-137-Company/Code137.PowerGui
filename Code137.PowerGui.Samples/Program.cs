@@ -29,7 +29,7 @@ public class Program
 
         Gui.MouseReleaseKeys();
 
-        Gui.SetCursorPosition(500, 500);
+        Gui.SetCursorPosition(new Position(500, 500));
 
         Gui.Sleep(2);
 
