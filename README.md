@@ -1,6 +1,6 @@
 # Code137.PowerGui
 
-New library created based on Code137.PowerGui but updated. Developed to facilitate the use of native Windows components, such as defining the cursor position, sending keyboard shortcuts or simulating keyboard typing.
+New library created based on KlusterG.AutoGui but updated. Developed to facilitate the use of native Windows components, such as defining the cursor position, sending keyboard shortcuts or simulating keyboard typing.
 
 # Requirements
 * .NET Core v7.0
