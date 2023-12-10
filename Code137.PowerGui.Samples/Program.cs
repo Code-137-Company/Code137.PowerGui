@@ -7,6 +7,16 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        while(true)
+        {
+            var key = Gui.GetKeyPress();
+            
+            if (key != null)
+                Console.WriteLine(key);
+        }
+
+        return;
+        
         Gui.Message("Test", "Content message.");
 
         Gui.MouseClick(MKeys.Right);

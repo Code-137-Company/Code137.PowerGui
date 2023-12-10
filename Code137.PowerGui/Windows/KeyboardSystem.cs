@@ -11,6 +11,7 @@ namespace Code137.PowerGui.Windows
         private static readonly uint KEYEVENF_KEYUP = 0x0002;
 
         private static List<KKeys> Keys = new List<KKeys>();
+        private static List<Keys> PressedKeys = new List<Keys>();
 
         public static void Write(string text)
         {
@@ -101,22 +102,32 @@ namespace Code137.PowerGui.Windows
 
         public static string GetKeyPress()
         {
-            Essent essent = new Essent();
+            var keys = (Keys[])Enum.GetValues(typeof(Keys));
 
-            for (int key = 0; key < 255; key++)
+            foreach (var key in keys)
             {
-                if (Api.GetAsyncKeyState(key) == -32767)
-                {
-                    char keyPress = Convert.ToChar(key);
+                var keyPress = Api.GetAsyncKeyState((int)key);
 
-                    if (essent.IsNumeric(keyPress.ToString()) || Regex.IsMatch(keyPress.ToString(), @"[A-Z]"))
-                    {
-                        return keyPress.ToString();
-                    }
-                    else
-                    {
-                        return null;
-                    }
+                if ((keyPress & 0x8000) != 0)
+                {
+                    if (PressedKeys.Contains(key))
+                        continue;
+
+                    PressedKeys.Add(key);
+
+                    return key.ToString();
+                }
+            }
+
+            foreach (var key in PressedKeys)
+            {
+                var keyPress = Api.GetAsyncKeyState((int)key);
+
+                if ((keyPress & 0x8000) == 0)
+                {
+                    PressedKeys.Remove(key);
+
+                    return null;
                 }
             }
 
