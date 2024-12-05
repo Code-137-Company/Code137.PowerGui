@@ -130,7 +130,7 @@ New library created based on KlusterG.AutoGui but updated. Developed to facilita
 
   Comment: Get the key that was pressed
 
-  Return: Tuple<bool, string>
+  Return: Keys
 
 #
 
