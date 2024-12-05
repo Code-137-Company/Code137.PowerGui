@@ -2,6 +2,7 @@
 {
     public enum Keys
     {
+        None = 0x00,
         LMB = 0x01,
         RMB = 0x02,
         Cancel = 0x03,

@@ -153,7 +153,7 @@ namespace Code137.PowerGui
             }
         }
 
-        public static string GetKeyPress()
+        public static Keys GetKeyPress()
         {
             try
             {

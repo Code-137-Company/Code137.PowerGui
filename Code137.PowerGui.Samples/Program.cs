@@ -81,10 +81,10 @@ public class Program
         {
             var key = Gui.GetKeyPress();
 
-            if (!string.IsNullOrEmpty(key))
-                Console.WriteLine(key);
+            if (key != Keys.None)
+                Console.WriteLine(key.ToString());
 
-            if (key == "T")
+            if (key.ToString() == "T")
                 break;
         }
     }

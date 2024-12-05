@@ -1,7 +1,6 @@
 ﻿using Code137.PowerGui.Domain.Enum;
 using Code137.PowerGui.Domain.WindowsModel;
 using Code137.PowerGui.Windows.External;
-using KlusterG.Essentials;
 using System.Text.RegularExpressions;
 
 namespace Code137.PowerGui.Windows
@@ -100,7 +99,7 @@ namespace Code137.PowerGui.Windows
             Keys.Clear();
         }
 
-        public static string GetKeyPress()
+        public static Keys GetKeyPress()
         {
             var keys = (Keys[])Enum.GetValues(typeof(Keys));
 
@@ -115,7 +114,7 @@ namespace Code137.PowerGui.Windows
 
                     PressedKeys.Add(key);
 
-                    return key.ToString();
+                    return key;
                 }
             }
 
@@ -127,11 +126,11 @@ namespace Code137.PowerGui.Windows
                 {
                     PressedKeys.Remove(key);
 
-                    return null;
+                    return Domain.Enum.Keys.None;
                 }
             }
 
-            return null;
+            return Domain.Enum.Keys.None;
         }
     }
 }
