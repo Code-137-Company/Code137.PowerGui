@@ -15,10 +15,10 @@ New library created based on KlusterG.AutoGui but updated. Developed to facilita
 
 ## Command Line
 * Access the Package Manager Console
-* Type the command ```Install-Package Code137.PowerGui -Version 1.1.1```
+* Type the command ```Install-Package Code137.PowerGui -Version 1.2.1```
 
 ## .NET CLI
-* Type the command ```dotnet add package Code137.PowerGui --version 1.1.1```
+* Type the command ```dotnet add package Code137.PowerGui --version 1.2.1```
 
 ## Git Clone
 * Click on Code and download in .zip (can be done in other ways, I'm saying the simplest).
